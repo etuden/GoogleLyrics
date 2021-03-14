@@ -13,12 +13,12 @@
 
 const styles = `
 .ruFbjf {
-	user-select: text !important;
+  user-select: text !important;
 }
 `;
 
 (function() {
-	const s = document.createElement('style');
+  const s = document.createElement('style');
   s.type = 'text/css';
   s.innerHTML = styles;
   (document.head || document.documentElement).appendChild(s)
