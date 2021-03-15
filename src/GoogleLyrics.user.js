@@ -15,11 +15,48 @@ const styles = `
 .ruFbjf {
   user-select: text !important;
 }
+.lyrics-copy-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  position: absolute;
+  right: 32px;
+  background: transparent;
+}
 `;
 
 (function() {
   const s = document.createElement('style');
   s.type = 'text/css';
   s.innerHTML = styles;
-  (document.head || document.documentElement).appendChild(s)
+  (document.head || document.documentElement).appendChild(s);
+
+  // Create a list of lyrics
+  const e = document.getElementsByClassName('ujudUb');
+  let lyricsList = [];
+  for (let i = 0; i < e.length; i++) {
+    if (e[i].className != 'ujudUb WRZytc') {
+      lyricsList.push(e[i].innerText);
+    }
+  }
+  console.log(lyricsList);
+
+  const button = document.createElement('button');
+  button.className = 'lyrics-copy-button';
+  button.textContent = 'Copy';
+  button.onclick = function() {
+    new Promise(function(resolve) {
+      resolve(lyricsList);
+    }).then(function(value) {
+      console.log(value);
+      // Convert a list of lyrics into a text
+      return value.join('\n');
+    }).then(function(value) {
+      console.log(value);
+      navigator.clipboard.writeText(value);
+    })
+  };
+
+  document.getElementsByClassName('Oh5wg YB98bd')[0].prepend(button);
 })();
