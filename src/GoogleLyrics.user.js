@@ -7,7 +7,7 @@
 // @author      etuden
 // @homepageURL https://github.com/etuden/GoogleLyrics
 // @include     https://www.google.*
-// @version     0.1.0
+// @version     0.1.1
 // @grant       none
 // ==/UserScript==
 
