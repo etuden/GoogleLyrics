@@ -6,7 +6,7 @@
 // @description Allow copying lyrics on Google
 // @author      etuden
 // @homepageURL https://github.com/etuden/GoogleLyrics
-// @include     *google.co*
+// @include     https://www.google.*
 // @version     0.1.0
 // @grant       none
 // ==/UserScript==
