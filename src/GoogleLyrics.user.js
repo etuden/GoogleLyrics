@@ -50,7 +50,7 @@ const contentCopy = `
   const e = document.getElementsByClassName('ujudUb');
   let lyricsList = [];
   for (let i = 0; i < e.length; i++) {
-    if (e[i].className != 'ujudUb WRZytc') {
+    if (!e[i].classList.contains('WRZytc')) {
       lyricsList.push(e[i].innerText);
     }
   }
