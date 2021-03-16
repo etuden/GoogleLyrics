@@ -64,13 +64,13 @@ const contentCopy = `
   const button = document.createElement('button');
   button.className = 'lyrics-copy-button';
   button.innerHTML = contentCopy;
-  button.onclick = () => {
+  button.onclick = async () => {
     navigator.clipboard.writeText(lyricsList.join('\n'));
-    (async () => {
-      button.style.background = 'rgba(0,0,0,.2)';
-      await new Promise(resolve => setTimeout(resolve, 100));
-      button.style.background = isHover(button) ? 'rgba(0,0,0,.1)' : 'transparent';
-    })();
+
+    // Button effect
+    button.style.background = 'rgba(0,0,0,.2)';
+    await new Promise(resolve => setTimeout(resolve, 100));
+    button.style.background = isHover(button) ? 'rgba(0,0,0,.1)' : 'transparent';
   }
   button.onmouseenter = () => button.style.background = 'rgba(0,0,0,.1)';
   button.onmouseleave = () => button.style.background = 'transparent';
