@@ -45,18 +45,7 @@ const styles = `
   const button = document.createElement('button');
   button.className = 'lyrics-copy-button';
   button.textContent = 'Copy';
-  button.onclick = function() {
-    new Promise(function(resolve) {
-      resolve(lyricsList);
-    }).then(function(value) {
-      console.log(value);
-      // Convert a list of lyrics into a text
-      return value.join('\n');
-    }).then(function(value) {
-      console.log(value);
-      navigator.clipboard.writeText(value);
-    })
-  };
+  button.onclick = () => navigator.clipboard.writeText(lyricsList.join('\n'));
 
   document.getElementsByClassName('Oh5wg YB98bd')[0].prepend(button);
 })();
